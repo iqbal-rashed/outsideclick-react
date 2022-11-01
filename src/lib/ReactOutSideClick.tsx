@@ -14,10 +14,13 @@ export const OutsideClick = ({ onOutsideClick, ...others }: OutSideClickType) =>
                 ref.current.contains &&
                 !ref.current.contains(event.target as Node)
             ) {
-                onOutsideClick && onOutsideClick(event.target as EventTarget)
+                onOutsideClick && onOutsideClick(ref.current)
             }
         }
         document.addEventListener('mousedown', handleClickOutside)
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
     }, [])
 
     return (
@@ -28,15 +31,21 @@ export const OutsideClick = ({ onOutsideClick, ...others }: OutSideClickType) =>
 }
 
 export const useOutsideClick = (outsideClick?: (v: EventTarget) => void) => {
-    const ref = useRef<HTMLDivElement | HTMLInputElement | HTMLImageElement | HTMLElement>(null)
+    const ref = useRef<any>(null)
     useLayoutEffect(() => {
-        document.addEventListener('mousedown', (e: MouseEvent) => {
-            ref.current &&
+        const handleClickOutside = (event: MouseEvent) => {
+            if (
+                ref.current &&
                 ref.current.contains &&
-                ref.current.contains(e.target as Node) &&
-                outsideClick &&
-                outsideClick(e.target as EventTarget)
-        })
+                !ref.current.contains(event.target as Node)
+            ) {
+                outsideClick && outsideClick(ref.current)
+            }
+        }
+        document.addEventListener('mousedown', handleClickOutside)
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
     }, [])
     return ref
 }

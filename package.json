@@ -1,7 +1,7 @@
 {
     "name": "outsideclick-react",
     "private": false,
-    "version": "0.0.3",
+    "version": "0.0.4",
     "type": "module",
     "scripts": {
         "dev": "vite",
@@ -69,7 +69,12 @@
         "type": "git",
         "url": "https://github.com/iqbal-rashed/outsideclick-react"
     },
-    "keywords": [],
+    "keywords": [
+        "outsideclick",
+        "react",
+        "hook",
+        "component"
+    ],
     "author": "Rashed Iqbal",
     "bugs": {
         "url": "https://github.com/iqbal-rashed/outsideclick-react/issues"
