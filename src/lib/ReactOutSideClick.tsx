@@ -1,10 +1,10 @@
 import React, { useLayoutEffect, useRef } from 'react'
 
 type OutSideClickType = {
-    onOutSideClick?: (v?: EventTarget) => void
+    onOutsideClick?: (v?: EventTarget) => void
 } & React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
-export const OutsideClick = ({ onOutSideClick, ...others }: OutSideClickType) => {
+export const OutsideClick = ({ onOutsideClick, ...others }: OutSideClickType) => {
     const ref = useRef<HTMLDivElement>(null)
 
     useLayoutEffect(() => {
@@ -14,7 +14,7 @@ export const OutsideClick = ({ onOutSideClick, ...others }: OutSideClickType) =>
                 ref.current.contains &&
                 !ref.current.contains(event.target as Node)
             ) {
-                onOutSideClick && onOutSideClick(event.target as EventTarget)
+                onOutsideClick && onOutsideClick(event.target as EventTarget)
             }
         }
         document.addEventListener('mousedown', handleClickOutside)
