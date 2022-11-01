@@ -1,2 +1,2 @@
-import { useOutsideClick, OutSideClick } from './ReactOutSideClick'
-export { useOutsideClick, OutSideClick }
+import { useOutsideClick, OutsideClick } from './ReactOutSideClick'
+export { useOutsideClick, OutsideClick }

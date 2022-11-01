@@ -4,7 +4,7 @@ type OutSideClickType = {
     onOutSideClick?: (v?: EventTarget) => void
 } & React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
-export const OutSideClick = ({ onOutSideClick, ...others }: OutSideClickType) => {
+export const OutsideClick = ({ onOutSideClick, ...others }: OutSideClickType) => {
     const ref = useRef<HTMLDivElement>(null)
 
     useLayoutEffect(() => {
