@@ -63,3 +63,10 @@ function MyComponent() {
 In the example above, we use the OutsideClick component to wrap our component and pass a callback function to the onOutsideClick prop that will be called when a click occurs outside of the wrapped element.
 
 > Note: The `OutsideClick` component returns a div element and supports all of the properties of a standard div element.
+
+<br/>
+If you'd like to contribute, please do submit a pull request.
+
+In case you want support my work
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/rashed.iqbal)

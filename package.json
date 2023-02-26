@@ -2,7 +2,7 @@
     "name": "outsideclick-react",
     "description": "This is a lightweight React package that provides a hook and component for detecting clicks outside of a specified element.",
     "private": false,
-    "version": "0.0.9",
+    "version": "0.1.0",
     "type": "module",
     "scripts": {
         "dev": "vite",
