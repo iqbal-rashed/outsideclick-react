@@ -1,7 +1,7 @@
 {
     "name": "outsideclick-react",
     "private": false,
-    "version": "0.0.5",
+    "version": "0.0.8",
     "type": "module",
     "scripts": {
         "dev": "vite",
@@ -73,7 +73,9 @@
         "outsideclick",
         "react",
         "hook",
-        "component"
+        "component",
+        "outsideclickhandler",
+        "click"
     ],
     "author": "Rashed Iqbal",
     "bugs": {

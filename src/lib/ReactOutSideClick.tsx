@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 type OutSideClickType = {
     onOutsideClick?: (v?: HTMLElement) => void
@@ -7,7 +7,7 @@ type OutSideClickType = {
 export const OutsideClick = ({ onOutsideClick, ...others }: OutSideClickType) => {
     const ref = useRef<HTMLDivElement>(null)
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (
                 ref.current &&
@@ -32,7 +32,7 @@ export const OutsideClick = ({ onOutsideClick, ...others }: OutSideClickType) =>
 
 export const useOutsideClick = (outsideClick?: (v: HTMLElement) => void) => {
     const ref = useRef<any>(null)
-    useLayoutEffect(() => {
+    useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (
                 ref.current &&

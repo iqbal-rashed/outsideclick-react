@@ -1,52 +1,65 @@
 # OutSideClick React
 
-A React component and a hook to detect outside click.
+`outsideclick-react` is a lightweight React package that provides a hook and component for detecting clicks outside of a specified element. This can be useful for creating dropdown menus, modals, and other UI components that need to close when the user clicks outside of them.
 
 ## Installation
 
+You can install outsideclick-react using NPM or Yarn:
+
 ```bash
-npm i outsideclick-react
+npm install outsideclick-react
+```
+
+or
+
+```bash
+yarn add outsideclick-react
 ```
 
 ## How to use
 
-### Use Hook
+### Hook Usage
+
+A hook that returns a `ref` object that can be attached to a target element to detect clicks outside of it.
 
 ```javascript
-import React from "react";
 import { useOutsideClick } from "outsideclick-react";
 
-function Example() {
-    const ref = useOutsideClick(handleOutsideClick)
+function MyComponent() {
     const handleOutsideClick = (e){
-        console.log(e)
+        // Handle outside click
     }
+    const ref = useOutsideClick(handleOutsideClick)
     return(
         <div ref={ref}>
-            <h1>Detect Outside Click</h1>
+            {/* Your component */}
         </div>
     )
 }
-export default Example
 ```
 
-### Use React Component
+In this example, we're using the `useOutsideClick` hook returns a `ref` object that can be used to detect clicks outside of an element. Pass in a `handleOutsideClick` function as a parameter to the hook, and when a click outside of the target element is detected, the function is called with the event object as the argument. This allows you to perform any necessary actions in response to the click.
+
+### Component Usage
+
+Alternatively, you can use the `OutsideClick` component provided by the package to wrap your component:
 
 ```javascript
-import React from "react";
-import { OutsideClick } from "outsideclick-react";
+import { OutsideClick } from 'outsideclick-react'
 
-function Example() {
-    const handleOutsideClick = (e){
-        console.log(e)
-    }
-    return(
-        <OutsideClick onOutsideClcik={handleOutsideClick}>
-            <h1>Detect Outside Click</h1>
+function MyComponent() {
+    return (
+        <OutsideClick
+            onOutsideClick={() => {
+                // Handle outside click
+            }}
+        >
+            <div>{/* Your component */}</div>
         </OutsideClick>
     )
 }
-export default Example
 ```
 
-NB: OutsideClick react component return a div, It supports all div element property
+In the example above, we use the OutsideClick component to wrap our component and pass a callback function to the onOutsideClick prop that will be called when a click occurs outside of the wrapped element.
+
+> Note: The `OutsideClick` component returns a div element and supports all of the properties of a standard div element.
