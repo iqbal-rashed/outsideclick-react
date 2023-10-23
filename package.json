@@ -29,6 +29,7 @@
     ],
     "exports": {
         ".": {
+            "types": "./dist/index.d.ts",
             "import": "./dist/outsideclick-react.es.js",
             "require": "./dist/outsideclick-react.umd.js"
         }

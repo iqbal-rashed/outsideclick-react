@@ -17,12 +17,12 @@ export default defineConfig((configEnv) => ({
             linters: [new EsLinter({ configEnv })],
         }),
         dts({
-            include: ['src/lib/'],
+            include: ['src/'],
         }),
     ],
     build: {
         lib: {
-            entry: resolve('src', 'lib/index.ts'),
+            entry: resolve('src', 'index.tsx'),
             name: 'OutSideClick',
             formats: ['es', 'umd'],
             fileName: (format) => `outsideclick-react.${format}.js`,
