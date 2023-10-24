@@ -30,6 +30,7 @@ function MyComponent() {
         // Handle outside click
     }
     const ref = useOutsideClick(handleOutsideClick)
+    /* const ref = useOutsideClick(handleOutsideClick,".hello-ignore") */
     return(
         <div ref={ref}>
             {/* Your component */}
@@ -51,8 +52,9 @@ function MyComponent() {
     return (
         <OutsideClick
             onOutsideClick={() => {
-                // Handle outside click
+                /* Handle outside click */
             }}
+            ignoreElement=".ignore"
         >
             <div>{/* Your component */}</div>
         </OutsideClick>
