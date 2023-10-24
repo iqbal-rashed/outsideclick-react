@@ -26,7 +26,7 @@ A hook that returns a `ref` object that can be attached to a target element to d
 import { useOutsideClick } from "outsideclick-react";
 
 function MyComponent() {
-    const handleOutsideClick = (e){
+    const handleOutsideClick = (e)=> {
         // Handle outside click
     }
     const ref = useOutsideClick(handleOutsideClick)
