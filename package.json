@@ -1,88 +1,46 @@
 {
-    "name": "outsideclick-react",
-    "description": "This is a lightweight React package that provides a hook and component for detecting clicks outside of a specified element.",
-    "private": false,
-    "version": "0.2.0",
-    "type": "module",
-    "scripts": {
-        "dev": "vite",
-        "build": "tsc && vite build",
-        "preview": "vite preview",
-        "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
-        "lint:fix": "eslint --fix 'src/**/*.{jsx,ts,tsx}'",
-        "format": "prettier --write src/**/*.{ts,tsx,css} --config ./.prettierrc",
-        "prepare": "husky install"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "src/**/*.{js,jsx,ts,tsx}": [
-            "yarn  eslint",
-            "yarn  format"
-        ]
-    },
-    "files": [
-        "dist"
-    ],
-    "exports": {
-        ".": {
-            "types": "./dist/index.d.ts",
-            "import": "./dist/outsideclick-react.es.js",
-            "require": "./dist/outsideclick-react.umd.js"
-        }
-    },
-    "main": "./dist/outsideclick-react.umd.js",
-    "module": "./dist/outsideclick-react.es.js",
-    "types": "./dist/index.d.ts",
-    "devDependencies": {
-        "@types/node": "^18.7.6",
-        "@types/react": "^18.0.17",
-        "@types/react-dom": "^18.0.6",
-        "@typescript-eslint/eslint-plugin": "^5.34.0",
-        "@typescript-eslint/parser": "^5.34.0",
-        "@vitejs/plugin-react": "^2.1.0",
-        "eslint": "^8.2.0",
-        "eslint-config-prettier": "^8.5.0",
-        "eslint-plugin-import": "^2.25.3",
-        "eslint-plugin-jsx-a11y": "^6.5.1",
-        "eslint-plugin-prettier": "^4.2.1",
-        "eslint-plugin-react": "^7.30.1",
-        "eslint-plugin-react-hooks": "^4.6.0",
-        "eslint-plugin-simple-import-sort": "^7.0.0",
-        "husky": "^8.0.1",
-        "lint-staged": "^13.0.3",
-        "prettier": "^2.7.1",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "typescript": "^4.6.4",
-        "vite": "^3.1.0",
-        "vite-plugin-dts": "^1.4.1",
-        "vite-plugin-linter": "^1.2.0",
-        "vite-tsconfig-paths": "^3.5.0"
-    },
-    "peerDependencies": {
-        "react": "16.8.0 || >=17.x",
-        "react-dom": "16.8.0 || >=17.x"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/iqbal-rashed/outsideclick-react"
-    },
-    "keywords": [
-        "outsideclick",
-        "react",
-        "hook",
-        "component",
-        "outsideclickhandler",
-        "click"
-    ],
-    "author": "Rashed Iqbal",
-    "bugs": {
-        "url": "https://github.com/iqbal-rashed/outsideclick-react/issues"
-    },
-    "homepage": "https://github.com/iqbal-rashed/outsideclick-react",
-    "license": "MIT"
+  "name": "outsideclick-react",
+  "version": "1.0.0",
+  "description": "A React utility hook for detecting outside clicks",
+  "repository": "https://github.com/iqbal-rashed/outsideclick-react.git",
+  "author": "Rashed Iqbal <dev.rashediqbal@gmail.com>",
+  "license": "MIT",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
+  },
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint"
+  },
+  "peerDependencies": {
+    "react": "16.8.0 || >=17.x",
+    "react-dom": "16.8.0 || >=17.x"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "eslint": "^9.19.0",
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^15.14.0",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.23.0"
+  },
+  "keywords": [
+    "react",
+    "outside click",
+    "useOutsideClick",
+    "react hook",
+    "event listener",
+    "click outside",
+    "outside click handler"
+  ]
 }
